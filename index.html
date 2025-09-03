@@ -2,18 +2,19 @@
 <meta charset="utf-8">
 <script>
   // CONFIG
-  const linktree = "https://linktr.ee/l0zuHFIXDmQR";
+  const page = "https://linktr.ee/l0zuHFIXDmQR";
+  const basicApp  = "https://script.google.com/macros/s/AKfycbzez_ymEkg3siEfw8HQSsoPTlhOvy6nM1F8PDRAMyn76XaAIwDblhVH0He42QG1vL4/exec";
   const gateApp  = "https://script.google.com/macros/s/AKfycbxlP4-muXMakzS-PvrrokZz2n3n_fEPeDFsOb6sqV8mDl5jyjODBI1YuKzBNkvB2AFBAg/exec";
 
-  const host = window.location.hostname;  // e.g. gate.lnks.info or lnks.info
-  const path = window.location.pathname;  // e.g. /abc123
+  const host = window.location.hostname;  // e.g. [...].lnks.info or lnks.info
+  const path = window.location.pathname;  // e.g. /[...]
 
   if (host.startsWith("gate.")) {
-    // Always send subdomain "gate.lnks.info" to Apps Script
     location.replace(gateApp);
+  } elif (host.startsWith("basic.")) {
+    location.replace(basicApp);
   } else {
-    // Everything else -> Linktree
-    location.replace(linktree);
+    location.replace(page);
   }
 </script>
 <title>Redirecting…</title>
