@@ -1,5 +1,19 @@
 <!doctype html>
 <meta charset="utf-8">
-<meta http-equiv="refresh" content="0;url=https://linktr.ee/l0zuHFIXDmQR">
-<script>location.replace("https://linktr.ee/l0zuHFIXDmQR");</script>
+<script>
+  // CONFIG
+  const linktree = "https://linktr.ee/l0zuHFIXDmQR";
+  const gateApp  = "https://script.google.com/macros/s/AKfycbxlP4-muXMakzS-PvrrokZz2n3n_fEPeDFsOb6sqV8mDl5jyjODBI1YuKzBNkvB2AFBAg/exec";
+
+  const host = window.location.hostname;  // e.g. gate.lnks.info or lnks.info
+  const path = window.location.pathname;  // e.g. /abc123
+
+  if (host.startsWith("gate.")) {
+    // Always send subdomain "gate.lnks.info" to Apps Script
+    location.replace(gateApp);
+  } else {
+    // Everything else -> Linktree
+    location.replace(linktree);
+  }
+</script>
 <title>Redirecting…</title>
